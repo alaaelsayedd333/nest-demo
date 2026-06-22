@@ -1,6 +1,6 @@
 #stage 1: build
 
-From node:18-alpine As builder
+From node:20-alpine As builder
 
 WORKDIR /app
 
@@ -12,7 +12,7 @@ RUN npm run build
 
 # stage 2: production
 
-FROM node:18-alpine 
+FROM node:20-alpine 
 
 WORKDIR /app
 

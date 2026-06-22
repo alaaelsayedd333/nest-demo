@@ -3,11 +3,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
-import { User } from './schema/user.schema';
-import { UserSchema } from './schema/user.schema';
 
 @Module({
-  imports: [ConfigModule.forRoot({isGlobal:true}), MongooseModule.forRoot(process.env.MONGO_URI!),MongooseModule.forFeature([{name:User.name, schema:UserSchema}])],
+  imports: [ConfigModule.forRoot({isGlobal:true}),MongooseModule],
   controllers: [AppController],
   providers: [AppService],
 })
